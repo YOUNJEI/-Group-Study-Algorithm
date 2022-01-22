@@ -102,11 +102,10 @@ int main(void) {
         }
         else if (_vi[i-1] >= _input) {
             // 입력으로 들어온 숫자가 바로 이전 숫자보다 작다면, 스택에 index 저장하고
-            // _answer에 임시로 -2 저장 후 다음 입력을 받을 준비
-            // _answer에 저장된 -2는 추후 다음 입력과 비교하여 오큰수인지 판단 혹은 오큰수가 없을경우 마지막에 -1로 변경
+            // _answer에 임시로 -1 저장 후 다음 입력을 받을 준비
             _s.push(i);
             _vi.push_back(_input);
-            _answer.push_back(-2);
+            _answer.push_back(-1);
         }
 
     }
@@ -115,9 +114,6 @@ int main(void) {
     _answer.push_back(-1);
 
     for (int i = 0; i < _answer.size(); i++) {
-        if (_answer[i] == -2)
-          // 오큰수가 존재하지 않는 index는 -1로 변경
-            _answer[i] = -1;
         cout << _answer[i] << " ";
     }
 
