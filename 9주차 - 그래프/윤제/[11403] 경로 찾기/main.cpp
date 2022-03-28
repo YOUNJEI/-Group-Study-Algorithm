@@ -15,8 +15,12 @@ void reset_visit(void)
 bool recur(int _from, int _target, int depth)
 {
     bool path = false;
+    
+    /*
     if (depth != 0 && _from == _target)
         return (true);
+    */
+        
     if (!g_visit[_from])
         g_visit[_from] = true;
     for (int i = 0; i < N; i++)
